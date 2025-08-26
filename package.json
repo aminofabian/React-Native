@@ -1,22 +1,57 @@
 {
-  "name": "backend",
-  "version": "1.0.0",
-  "main": "index.js",
-  "scripts": {
-    "dev": "nodemon server.js"
-  },
-  "keywords": [],
+  "name": "expense-tracker-backend",
+  "version": "2.0.0",
+  "description": "Advanced expense tracking backend with Quarter Formula, AI analytics, and comprehensive financial management",
+  "main": "server.js",
   "type": "module",
-  "author": "",
-  "license": "ISC",
-  "description": "",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js",
+    "test": "echo \"Tests not yet implemented\" && exit 1",
+    "db:init": "node -e \"import('./config/database.js').then(db => db.initDB().then(() => console.log('Database initialized successfully')).catch(console.error))\"",
+    "db:backup": "node scripts/backup.js",
+    "db:restore": "node scripts/restore.js",
+    "analytics:generate": "node scripts/generateAnalytics.js",
+    "recurring:process": "node scripts/processRecurring.js",
+    "lint": "echo \"Linting not configured\" && exit 1",
+    "validate": "node scripts/validate.js"
+  },
+  "keywords": [
+    "expense-tracking",
+    "financial-management",
+    "quarter-formula",
+    "budgeting",
+    "analytics",
+    "recurring-transactions",
+    "goals-tracking",
+    "api",
+    "nodejs",
+    "express"
+  ],
+  "author": "Expense Tracker Team",
+  "license": "MIT",
+  "engines": {
+    "node": ">=16.0.0",
+    "npm": ">=8.0.0"
+  },
   "dependencies": {
     "@neondatabase/serverless": "^1.0.1",
     "cors": "^2.8.5",
     "dotenv": "^17.2.1",
-    "express": "^4.21.0"
+    "express": "^4.21.0",
+    "express-rate-limit": "^6.10.0",
+    "helmet": "^7.1.0",
+    "compression": "^1.7.4"
   },
   "devDependencies": {
     "nodemon": "^3.1.10"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/your-username/expense-tracker-backend"
+  },
+  "bugs": {
+    "url": "https://github.com/your-username/expense-tracker-backend/issues"
+  },
+  "homepage": "https://github.com/your-username/expense-tracker-backend#readme"
 }
